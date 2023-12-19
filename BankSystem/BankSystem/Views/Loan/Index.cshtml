@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Loan>;
+
+@section CSS {
+    <link rel="stylesheet" type="text/css" href="~/css/loan.css" />
+}
+
+@{
+    int i = 1;
+    <div class="container">
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Number</div>
+                <div class="col col-2">Account</div>
+                <div class="col col-3">Sum of loan</div>
+                <div class="col col-2">Sum of refund</div>
+                <div class="col col-4">Paid</div>
+                <div class="col col-4">Remain</div>
+                <div class="col col-4">Monthly</div>
+                <div class="col col-4">Currency</div>
+                <div class="col col-4">Begin</div>
+                <div class="col col-4">End</div>
+                <div class="col col-4">Months</div>
+                <div class="col col-4"></div>
+            </li>
+            @foreach (var item in Model)
+            {
+                <li class="table-row">
+                    <div class="col col-1" data-label="Number">0<span>@i</span></div>
+                    <div class="col col-2" data-label="Account">@item.PaymentAccount</div>
+                    <div class="col col-3" data-label="Sum of loan">@item.SumOfLoan</div>
+                    <div class="col col-2" data-label="Sum of refund">@item.SumOfRefund</div>
+                    <div class="col col-3" data-label="Paid">@item.Paid</div>
+                    <div class="col col-3" data-label="Remain">@item.Remain</div>
+                    <div class="col col-3" data-label="Monthly">@item.Monthly</div>
+                    <div class="col col-4" data-label="Currency">@item.Currency</div>
+                    <div class="col col-4" data-label="Begin">@item.BeginDate?.ToString("dd MMM yyyy", new System.Globalization.CultureInfo("en-US"))</div>
+                    <div class="col col-4" data-label="End">@item.EndDate?.ToString("dd MMM yyyy", new System.Globalization.CultureInfo("en-US"))</div>
+                    <div class="col col-4" data-label="Months">@item.Months</div>
+                    @if (item.Status == "Active")
+                    {
+                        <form class="col col-4" asp-controller="Loan" asp-action="Pay" asp-route-id="@item.LoanID"><button class="button-7" type="submit" role="button"><span class="material-icons">paid</span>Pay</button></form>
+                    }
+                    else
+                    {
+                        <div class="col col-4" data-label="Status">@item.Status</div>
+                    }
+
+                </li>
+                i = i + 1;
+            }
+        </ul>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="login-form__error center"></div>
+    <div class="center"><a class="button-6" role="button" asp-action="Create" asp-controller="Loan"><span class="material-icons">add</span>Add</a></div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

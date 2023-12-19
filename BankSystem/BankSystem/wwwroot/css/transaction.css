@@ -1,0 +1,263 @@
+﻿/* Shoutout to Maite Rosalie for the gold svg gradient which can be seen here below. */
+
+/* https://codepen.io/maiterosalie/pen/ppRRLV?q=gold+gradient&limit=all&type=type-pens */
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.Wrap {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 1500px;
+    gap: 50px;
+    margin-top: 50px;
+    /*justify-content: center;*/
+
+    /*align-items: center;*/
+}
+
+.Base {
+    background: #ccc;
+    height: 300px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+.Inner-wrap {
+    background-color: #0c0014;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%230d1838' points='1600%2C160 0%2C460 0%2C350 1600%2C50'/%3E%3Cpolygon fill='%230e315d' points='1600%2C260 0%2C560 0%2C450 1600%2C150'/%3E%3Cpolygon fill='%230f4981' points='1600%2C360 0%2C660 0%2C550 1600%2C250'/%3E%3Cpolygon fill='%231062a6' points='1600%2C460 0%2C760 0%2C650 1600%2C350'/%3E%3Cpolygon fill='%23117aca' points='1600%2C800 0%2C800 0%2C750 1600%2C450'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: auto 147%;
+    background-position: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 13px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+p {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Controls top right logo */
+
+.Logo {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    right: 0;
+    top: 0;
+    padding: inherit;
+    fill: #117aca;
+}
+
+/* Controls chip icon */
+
+.Chip {
+    height: 80px;
+    margin: 40px 0 25px 0;
+}
+
+.gold path {
+    fill: url(#gold-gradient);
+}
+
+svg {
+    display: block;
+}
+
+/* Controls name size */
+
+.Logo-name {
+    transform: scale(.5);
+    margin-left: -75px;
+}
+
+.Card-number p {
+    text-align: center;
+}
+
+.Card-number {
+    margin-top: -25px;
+    display: flex;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+ul {
+    padding: 0;
+}
+
+    ul li {
+        list-style: none;
+        float: left;
+        margin: 0px 10px;
+        font-size: 2.2em;
+    }
+
+#first-li {
+    margin-left: 0;
+}
+
+#last-li {
+    margin-right: 0;
+}
+
+.Expire {
+    font-size: .75em;
+    text-align: center;
+}
+
+    .Expire h4 {
+        font-weight: 400;
+        color: #aaa;
+        margin: 0;
+        /*   word-spacing: 9999999px; */
+        text-transform: uppercase;
+    }
+
+    .Expire p {
+        font-size: 1.55em;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+.Name h3 {
+    position: absolute;
+    bottom: 0;
+    left: 18%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.35em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.Visa {
+    width: 115px;
+    position: absolute;
+    bottom: -145px;
+    right: 0;
+    padding: inherit;
+}
+
+.content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.sign-in-title {
+    color: black;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 400;
+    /* margin-top: 300px; */
+    /* margin-left: 50px; */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    height: auto;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    border-color: rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+p.label {
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.login-form__input {
+    background-color: white;
+    border: 1px solid;
+    border-color: #7e7e7e;
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 35px;
+    max-width: 350px;
+    /* width: 440px; */
+    color: black;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 400;
+    padding-left: 10px;
+    z-index: 1;
+}
+
+.button-7 {
+    margin-top: 10px;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #0038d1;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+    .button-7:hover {
+        background-color: #043fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    }
+
+    .button-7:hover {
+        transform: translateY(-1px);
+    }
+
+.login-form__error {
+    color: #ff0000;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    align-self: center;
+}
+
+    .login-form__error ul li {
+        list-style-type: none;
+        font-size: 16px;
+    }
+
+.login-form__success {
+    color: #03ff00;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    align-self: center;
+}

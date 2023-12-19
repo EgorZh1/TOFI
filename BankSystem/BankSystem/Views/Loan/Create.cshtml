@@ -1,0 +1,62 @@
+﻿@model BankSystem.Entities.Loan
+
+@{
+    ViewData["Title"] = "Create";
+}
+@section CSS {
+    <link rel="stylesheet" type="text/css" href="~/css/Create.css" />
+}
+
+<div class="main-content">
+    <div class="content-column">
+        <p class="sign-in-title">Ефлу your loan</p>
+        <form class="login-form" asp-action="Create">
+            <p class="label">Enter sum of loan</p>
+            <div asp-validation-summary="ModelOnly" class="login-form__error"></div>
+            <input asp-for="SumOfLoan" required class="login-form__input" placeholder="Balance...">
+            <span asp-validation-for="SumOfLoan" class="login-form__error"></span>
+            <p class="label-password">Choose period (months)</p>
+            <select asp-for="Months" name="Months" class="login-form__input" id="currency">
+                <option value=6>6</option>
+                <option value=12>12</option>
+                <option value=24>24</option>
+                <option value=36>36</option>
+                <option value=48>48</option>
+                <option value=60>60</option>
+                <option value=72>72</option>
+                <option value=84>84</option>
+            </select>
+            <span asp-validation-for="Months" class="login-form__error"></span>
+            <p class="label-password">Choose your payment account</p>
+            <select asp-for="PaymentAccount" name="PaymentAccount" class="login-form__input" id="currency">
+                @foreach (var item in ViewBag.bankAccounts)
+                {
+                    <option value=@item.NumberOfAccount>@item.NumberOfAccount</option>
+                }
+            </select>
+            <span asp-validation-for="PaymentAccount" class="login-form__error"></span>
+            <p class="label-password">Choose the account to which you want deposit money</p>
+            <select asp-for="AccruedAccount" name="AccruedAccount" class="login-form__input" id="currency">
+                @foreach (var item in ViewBag.bankAccounts)
+                {
+                    <option value=@item.NumberOfAccount>@item.NumberOfAccount</option>
+                }
+            </select>
+            <span asp-validation-for="AccruedAccount" class="login-form__error"></span>
+            <p class="label-password">Choose currency</p>
+            <select asp-for="Currency" name="Currency" class="login-form__input" id="currency">
+                <option value="BYN">BYN</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <span asp-validation-for="Currency" class="login-form__error"></span>
+            <button class="button-6" role="button" type="submit"><span class="material-icons">add</span>Create</button>
+            <a class="link" asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAy4xCyX2AIEuY52u8Fg+ZLQAAAAACAAAAAAAQZgAAAAEAACAAAABUG+2c9uhcQOE9NhBuwcH+UKn0jRfQv5nOgOZGkiGUwAAAAAAOgAAAAAIAACAAAACOl7dThbtOaTRkloUWOWJH2NOEdrf+Lelf4+8Vnfkp1CAAAAAYyrqG1/J71XaBoORhv+A9ZP8jwrQvCNTcGNyr4YmRJUAAAACNobra0tTTPY8AScaIQet+THX9zPw8GfFJgqkDGhddQME6Hr6CQrW3ClqBc8D0GSOObq5AWqEsjDF2aUKkfcvd</EncryptedPassword>
+    <History>True|2023-12-18T21:02:51.5604136Z;True|2023-12-18T23:22:00.4368487+03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL6031.site4now.net%3bInitial Catalog=db_aa3120_egorik14%3bUser Id=db_aa3120_egorik14_admin%3bPassword=qwerty123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

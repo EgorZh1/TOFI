@@ -1,0 +1,40 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+@section CSS {
+    <link rel="stylesheet" type="text/css" href="~/css/sign-in.css" />
+}
+
+@inject SignInManager<ApplicationUser> SignInManager
+@if (SignInManager.IsSignedIn(User))
+{
+    Response.Redirect("/");
+}
+else
+{
+    <div class="main-content">
+        <div class="content-column">
+            <p class="sign-in-title">Sign in to MyBank</p>
+            <form class="login-form" id="account" method="post">
+                <p class="label">User name</p>
+                <div asp-validation-summary="ModelOnly" class="login-form__error"></div>
+                <input asp-for="Input.UserName" required type="text" class="login-form__input" id="email" placeholder="User name...">
+                <span asp-validation-for="Input.UserName" class="login-form__error"></span>
+                <p class="label-password">Password</p>
+                <div asp-validation-summary="ModelOnly" class="login-form__error"></div>
+                <input asp-for="Input.Password" required type="password" class="login-form__input" id="password" placeholder="Password...">
+                <span asp-validation-for="Input.Password" class="login-form__error"></span>
+                <button type="submit" class="login-form__log-in">Sign In</button>
+                <p class="text">New here?<a class="link" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create an MyBank account</a></p>
+            </form>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section CSS {
+    <link rel="stylesheet" type="text/css" href="~/css/mainpage.css" />
+}
+
+<div class="main-content">
+    <div class="category-row">
+        <div class="category-row__category">
+            <h1 class="category__title">Accounts</h1>
+            <p class="category__description">Your bank accounts</p>
+            <div class="category__links-row">
+                <a class="links-row__link nav-link" asp-action="Index" asp-controller="Accounts">Manage accounts</a>
+            </div>
+            <img class="category__image" src="Images/BankAccount.png" />
+        </div>
+        <div class="category-row__category">
+            <h1 class="category__title">Transactions</h1>
+            <p class="category__description">Transaction section</p>
+            <div class="category__links-row">
+                <a class="links-row__link nav-link" asp-action="Index" asp-controller="Transaction">Make transaction</a>
+            </div>
+            <img class="category__image" src="Images/transaction.png" />
+        </div>
+        <div class="category-row__category">
+            <h1 class="category__title">Loans</h1>
+            <p class="category__description">Loans section</p>
+            <div class="category__links-row">
+                <a class="links-row__link nav-link" asp-action="Index" asp-controller="Loan">Take a loan</a>
+            </div>
+            <img class="category__image" src="Images/Loan.png" />
+        </div>
+    </div>
+</div>

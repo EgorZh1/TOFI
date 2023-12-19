@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,500,700,600|Homenaje:400");
+.main-content {
+    max-width: 1520px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+div.category-row {
+    display: flex;
+    align-items: center;
+    width: 1520px;
+    margin: 0px auto;
+    margin-top: 100px;
+    gap: 85px;
+}
+
+div.category-row:first-child {
+    margin-top: 150px;
+}
+
+div.category-row__category {
+    width: 450px;
+    height: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+}
+
+h1.category__title {
+    text-decoration: none;
+    color: black;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+p.category__description {
+    text-decoration: none;
+    color: black;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+.category__links-row {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 50px;
+}
+
+a.links-row__link {
+    text-decoration: none;
+    color: #384CFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+a.nav-link::after{
+    content: '';
+    background: #384CFF;
+    width: 0%;
+    height: 1px;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+a.nav-link:hover::after{
+    width: 100%;
+}
+
+.category__image {
+    height: 190px;
+    width: 250px;
+    margin-top: 30px;
+    object-fit: contain;
+}
+
+.div-block {
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-block__see-btn {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #30C018;
+    height: 37px;
+    padding-top: 18px;
+    width: 200px;
+    color: white;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+}
+
+.div-block__see-btn:hover {
+    color: #000000;;
+}

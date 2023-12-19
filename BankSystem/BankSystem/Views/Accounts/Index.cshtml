@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BankAccount>;
+
+
+@section CSS {
+    <link rel="stylesheet" type="text/css" href="~/css/Accounts.css" />
+}
+
+@{
+    int i = 1;
+
+    <div class="container">
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Number</div>
+                <div class="col col-2">Account</div>
+                <div class="col col-3">Balance</div>
+                <div class="col col-4">Currency</div>
+                <div class="col col-4"></div>
+            </li>
+            @foreach (var item in Model)
+            {
+                <li class="table-row">
+                    <div class="col col-1" data-label="Number">0<span>@i</span></div>
+                    <div class="col col-2" data-label="Account">@item.NumberOfAccount</div>
+                    <div class="col col-3" data-label="Balance">@item.Balance.ToString("0.00")</div>
+                    <div class="col col-4" data-label="Currency">@item.Currency</div>
+                    <form class="col col-4" asp-controller="Accounts" asp-action="Delete" asp-route-id="@item.BankAccountID" method="post"><button class="button-5" type="submit" role="button" value="Delete"><span class="material-icons">delete</span>Delete</button></form>
+                </li>
+                i = i + 1;
+            }
+        </ul>
+    </div>
+    <div asp-validation-summary="ModelOnly" class="login-form__error center"></div>
+    @if (Model.Count() != 5)
+    {
+        <div class="center"><a class="button-6" role="button" asp-action="Create" asp-controller="Accounts"><span class="material-icons">add</span>Add</a></div>
+    }
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
